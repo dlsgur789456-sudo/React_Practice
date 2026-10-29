@@ -13,7 +13,7 @@ const Menu =()=> {
                 <div className="crud_menu" onClick={()=>{navi("/admin/member/update")}}>수정</div>
                 <div className="crud_menu" onClick={()=>{navi("/admin/member/delete")}}>삭제</div>
             </div>
-            <div><Outlet /></div>
+            <div className="curd_body"><Outlet /></div>
         </div>
     )
 }
