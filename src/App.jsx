@@ -1,6 +1,8 @@
-import { Routes, Route } from 'react-router-dom';
-import { Login } from "./login/Login";
+
 import { Menu_Add } from './components/Menu_Add';
+import {Routes, Route} from 'react-router-dom';
+import {Login} from "./login/Login";
+import {Admin} from './admin/Admin';
 
 
 function App() {
