@@ -54,7 +54,7 @@ export const Menu_Update = ({ menus, setMenus }) => {
     };
 
     return (
-        <div>
+        <div className="main_body">
             <input
                 type="number"
                 placeholder="수정할 ID를 입력하세요."

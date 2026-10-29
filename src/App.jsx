@@ -70,13 +70,19 @@ function App() {
     {name:'add', func:'Add'}, {name:'list', func:'List'}, {name:'update', func:'Update'}, {name:'delete', func:'Delete'}
   ])
 
+  const [dashBoard, setDashBoard] = useState([
+    {name:'메뉴 개수', value:menus.length}, {name:'재고 품목 수', value:stocks.length}, {name:'직원 수', value:staffs.length}, {name:'주문 기록 수', value:orders.length}, 
+  ])
+
   return (
     <Routes>
       <Route>
         <Route path='/' element={<Login />}></Route>
         <Route path='admin' element={<Admin page={page} setPage={setPage} pageMenu={pageMenu}/>}>
-          <Route index path='dashboard' element={<DashBoard />}></Route>
+          <Route index element={<DashBoard dashBoard={dashBoard}/>}></Route>
+          <Route path='dashboard' element={<DashBoard dashBoard={dashBoard}/>}></Route>
           <Route path='menu' element={<Menu />}>
+            <Route index element={<Menu_List menus={menus} />}></Route>
             <Route path='list' element={<Menu_List menus={menus} />}></Route>
             <Route path='add' element={<Menu_Add menus={menus} setMenus={setMenus} />}></Route>
             <Route path='update' element={<Menu_Update menus={menus} setMenus={setMenus} />}></Route>

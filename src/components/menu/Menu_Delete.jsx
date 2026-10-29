@@ -27,7 +27,7 @@ export const Menu_Delete = ({ menus, setMenus }) => {
     };
 
     return (
-        <div>
+        <div className="main_body">
             
             <input
                 type="text"

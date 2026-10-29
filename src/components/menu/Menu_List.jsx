@@ -1,14 +1,14 @@
 export const Menu_List = ({ menus }) => {
 
   return (
-    <div>
+    <div className="main_body">
       {
         menus.map((e, i)=>{
           return(
             <div key={i}>
-              <div>{e.id}</div>
-              <div>{e.name}</div>
-              <div>{e.price}</div>
+              <div className="list">{e.id}</div>
+              <div className="list">{e.name}</div>
+              <div className="list">{e.price}</div>
             </div>
           );
         })
