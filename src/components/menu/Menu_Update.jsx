@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 export const Menu_Update = ({ menus, setMenus }) => {
@@ -32,7 +31,7 @@ export const Menu_Update = ({ menus, setMenus }) => {
         });
 
         if (!idCheck) {
-            alert("존재하지 않는 ID입니다.");
+            alert("존재하지 않는 메뉴입니다.");
             return;
         }
 
@@ -57,7 +56,7 @@ export const Menu_Update = ({ menus, setMenus }) => {
         <div className="main_body">
             <input
                 type="number"
-                placeholder="수정할 ID를 입력하세요."
+                placeholder="수정할 메뉴번호를 입력하세요."
                 name="id"
                 value={editMenu.id}
                 onChange={handleEditChange}

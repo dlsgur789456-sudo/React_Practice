@@ -7,7 +7,7 @@ import { Menu_List } from './components/menu/Menu_List';
 import { Menu_Update } from './components/menu/Menu_Update';
 import { Menu_Delete } from './components/menu/Menu_Delete';
 import { Stock } from './pages/Stock';
-import { Stock_List } from './components/stock/Stock_List'; 
+import { Stock_List } from './components/stock/Stock_List';
 import { Stock_Add } from './components/stock/Stock_Add';
 import { Stock_Update } from './components/stock/Stock_Update';
 import { Stock_Delete } from './components/stock/Stock_Delete';
@@ -18,7 +18,7 @@ import { Order_Update } from './components/order/Order_Update';
 import { Order_Delete } from './components/order/Order_Delete';
 import { Member } from './pages/Member';
 import { Member_List } from './components/member/Member_List';
-import { Member_Add } from './components/member/Member_Add'; 
+import { Member_Add } from './components/member/Member_Add';
 import { Member_Update } from './components/member/Member_Update';
 import { Member_Delete } from './components/member/Member_Delete';
 import { DashBoard } from './pages/DashBoard';
@@ -59,15 +59,15 @@ function App() {
   ]);
 
   const [pageMenu, setPageMenu] = useState([
-    {name:'대시보드', value:'dashboard', func:DashBoard},
-    {name:'메뉴관리', value:'menu', func:Menu},
-    {name:'재고관리', value:'stock', func:Stock},
-    {name:'주문관리', value:'order', func:Order},
-    {name:'직원관리', value:'member', func:Member}
-])
+    { name: '대시보드', value: 'dashboard', func: DashBoard },
+    { name: '메뉴관리', value: 'menu', func: Menu },
+    { name: '재고관리', value: 'stock', func: Stock },
+    { name: '주문관리', value: 'order', func: Order },
+    { name: '직원관리', value: 'member', func: Member }
+  ])
 
   const [crud, setCrud] = useState([
-    {name:'add', func:'Add'}, {name:'list', func:'List'}, {name:'update', func:'Update'}, {name:'delete', func:'Delete'}
+    { name: 'add', func: 'Add' }, { name: 'list', func: 'List' }, { name: 'update', func: 'Update' }, { name: 'delete', func: 'Delete' }
   ])
 
   const [dashBoard, setDashBoard] = useState([
@@ -76,7 +76,9 @@ function App() {
 
   return (
     <Routes>
+
       <Route>
+        {/* 로그인 화면 (첫 화면) - 로그인 성공 시 관리자 화면으로 이동 */}
         <Route path='/' element={<Login />}></Route>
         <Route path='admin' element={<Admin page={page} setPage={setPage} pageMenu={pageMenu}/>}>
           <Route index element={<DashBoard dashBoard={dashBoard}/>}></Route>
@@ -88,34 +90,47 @@ function App() {
             <Route path='update' element={<Menu_Update menus={menus} setMenus={setMenus} />}></Route>
             <Route path='delete' element={<Menu_Delete menus={menus} setMenus={setMenus} />}></Route>
           </Route>
+
+          {/* 재고관리 */}
           <Route path='stock' element={<Stock />}>
-            <Route path='list' element={<Stock_List />}></Route>
-            <Route path='add' element={<Stock_Add />}></Route>
-            <Route path='update' element={<Stock_Update />}></Route>
-            <Route path='delete' element={<Stock_Delete />}></Route>
+            <Route index element={<Stock_List stocks={stocks} setStocks={setStocks} />}></Route>
+            <Route path='list' element={<Stock_List stocks={stocks} setStocks={setStocks} />}></Route>
+            <Route path='add' element={<Stock_Add stocks={stocks} setStocks={setStocks} />}></Route>
+            <Route path='update' element={<Stock_Update stocks={stocks} setStocks={setStocks} />}></Route>
+            <Route path='delete' element={<Stock_Delete stocks={stocks} setStocks={setStocks} />}></Route>
           </Route>
+
+          {/* 주문관리 */}
           <Route path='order' element={<Order />}>
-            <Route path='list' element={<Order_List />}></Route>
-            <Route path='add' element={<Order_Add />}></Route>
-            <Route path='update' element={<Order_Update />}></Route>
-            <Route path='delete' element={<Order_Delete />}></Route>
+            <Route index element={<Order_List orders={orders} setOrders={setOrders} />}></Route>
+            <Route path='list' element={<Order_List orders={orders} setOrders={setOrders} />}></Route>
+            <Route path='add' element={<Order_Add orders={orders} setOrders={setOrders} />}></Route>
+            <Route path='update' element={<Order_Update orders={orders} setOrders={setOrders} />}></Route>
+            <Route path='delete' element={<Order_Delete orders={orders} setOrders={setOrders} />}></Route>
           </Route>
+
+          {/* 직원관리 */}
           <Route path='member' element={<Member />}>
-            <Route path='list' element={<Member_List />}></Route>
-            <Route path='add' element={<Member_Add />}></Route>
-            <Route path='update' element={<Member_Update />}></Route>
-            <Route path='delete' element={<Member_Delete />}></Route>
+            <Route index element={<Member_List staffs={staffs} setStaffs={setStaffs} />}></Route>
+            <Route path='list' element={<Member_List staffs={staffs} setStaffs={setStaffs} />}></Route>
+            <Route path='add' element={<Member_Add staffs={staffs} setStaffs={setStaffs} />}></Route>
+            <Route path='update' element={<Member_Update staffs={staffs} setStaffs={setStaffs} />}></Route>
+            <Route path='delete' element={<Member_Delete staffs={staffs} setStaffs={setStaffs} />}></Route>
           </Route>
-          {/* {pageMenu.map((e, i) => {
+
+        </Route>
+
+      </Route>
+
+    </Routes>
+  );
+}
+export default App;
+
+{/* {pageMenu.map((e, i) => {
           const Func = e.func;
             return (
             <Route key={i} path={e.value} element={<Func page={page} setPage={setPage} pageMenu={pageMenu}/>}>
             </Route>
           );
         })} */}
-        </Route>
-      </Route>
-    </Routes>
-  );
-}
-export default App;
