@@ -10,7 +10,7 @@ export const Admin =({page, setPage, pageMenu})=> {
         <div className="container">
             <div className="adminHeader">
                 <p>매장 관리 시스템</p>
-                <button>로그아웃</button>
+                <button onClick={()=>{navi("/")}}>로그아웃</button>
             </div>
             <div className="body">
                 <div className="side">

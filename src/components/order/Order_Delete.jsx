@@ -28,7 +28,7 @@ export const Order_Delete = ({ orders, setOrders }) => {
     };
 
     return (
-        <div>
+        <div className="main_body">
 
             <input
                 type="text"

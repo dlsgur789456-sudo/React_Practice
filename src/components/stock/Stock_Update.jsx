@@ -54,7 +54,7 @@ export const Stock_Update = ({ stocks, setStocks }) => {
     };
 
     return (
-        <div>
+        <div className="main_body">
             <input
                 type="number"
                 placeholder="수정할 재고 ID를 입력하세요."

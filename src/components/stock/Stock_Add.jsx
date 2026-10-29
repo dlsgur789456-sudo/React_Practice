@@ -45,7 +45,7 @@ export const Stock_Add =(stocks, setStocks)=> {
        };
    
        return (
-           <div>
+           <div className="main_body">
                <input
                    type="number"
                    placeholder="재고 ID를 입력하세요."

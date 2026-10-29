@@ -54,7 +54,7 @@ export const Member_Update = ({ staffs, setStaffs }) => {
     };
 
     return (
-        <div>
+        <div className="main_body">
             <input
                 type="number"
                 placeholder="수정할 직원 번호를 입력하세요."

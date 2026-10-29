@@ -45,7 +45,7 @@ export const Member_Add = ({ staffs, setStaffs }) => {
     };
 
     return (
-        <div>
+        <div className="main_body">
             <input
                 type="number"
                 placeholder="직원 번호를 입력하세요"

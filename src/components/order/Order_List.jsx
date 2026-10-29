@@ -1,14 +1,14 @@
 export const Order_List = ({ orders }) => {
 
   return (
-    <div>
+    <div className="main_body">
       {
         orders.map((e, i) => {
           return (
             <div key={i}>
-              <div>{e.id}</div>
-              <div>{e.item}</div>
-              <div>{e.total}</div>
+              <div className="list">{e.id}</div>
+              <div className="list">{e.item}</div>
+              <div className="list">{e.total}</div>
             </div>
           );
         })

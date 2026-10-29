@@ -28,7 +28,7 @@ export const Stock_Delete = ({ stocks, setStocks }) => {
     };
 
     return (
-        <div>
+        <div className="main_body">
 
             <input
                 type="text"

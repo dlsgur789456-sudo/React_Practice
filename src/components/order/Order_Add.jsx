@@ -45,7 +45,7 @@ export const Order_Add = ({ orders, setOrders }) => {
     };
 
     return (
-        <div>
+        <div className="main_body"> 
             <input
                 type="number"
                 placeholder="주문 번호를 입력하세요."

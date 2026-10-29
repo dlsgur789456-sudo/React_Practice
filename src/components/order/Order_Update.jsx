@@ -54,7 +54,7 @@ export const Order_Update = ({ orders, setOrders }) => {
     };
 
     return (
-        <div>
+        <div className="main_body">
             <input
                 type="number"
                 placeholder="수정할 주문번호를 입력하세요."

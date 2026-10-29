@@ -1,14 +1,14 @@
 export const Member_List = ({ staffs }) => {
 
   return (
-    <div>
+    <div className="main_body">
       {
         staffs.map((e, i) => {
           return (
             <div key={i}>
-              <div>{e.id}</div>
-              <div>{e.name}</div>
-              <div>{e.phone}</div>
+              <div className="list">{e.id}</div>
+              <div className="list">{e.name}</div>
+              <div className="list">{e.phone}</div>
             </div>
           );
         })

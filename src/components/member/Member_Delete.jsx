@@ -27,7 +27,7 @@ export const Member_Delete = () => {
     };
 
     return (
-        <div>
+        <div className="main_body">
 
             <input
                 type="text"
