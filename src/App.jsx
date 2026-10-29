@@ -7,7 +7,7 @@ import { Menu_List } from './components/Menu_List';
 import { Menu_Update } from './components/Menu_Update';
 import { Menu_Delete } from './components/Menu_Delete';
 import { Stock } from './pages/Stock';
-import { Stock_List } from './components/Stock_List'; 
+import { Stock_List } from './components/Stock_List';
 import { Stock_Add } from './components/Stock_Add';
 import { Stock_Update } from './components/Stock_Update';
 import { Stock_Delete } from './components/Stock_Delete';
@@ -18,7 +18,7 @@ import { Order_Update } from './components/Order_Update';
 import { Order_Delete } from './components/Order_Delete';
 import { Member } from './pages/Member';
 import { Member_List } from './components/Member_List';
-import { Member_Add } from './components/Member_Add'; 
+import { Member_Add } from './components/Member_Add';
 import { Member_Update } from './components/Member_Update';
 import { Member_Delete } from './components/Member_Delete';
 import { DashBoard } from './components/DashBoard';
@@ -64,8 +64,8 @@ function App() {
           <Route path='menu' element={<Menu />}>
             <Route path='list' element={<Menu_List menus={menus} />}></Route>
             <Route path='add' element={<Menu_Add menus={menus} setMenus={setMenus} />}></Route>
-            <Route path='update' element={<Menu_Update />}></Route>
-            <Route path='delete' element={<Menu_Delete />}></Route>
+            <Route path='update' element={<Menu_Update menus={menus} setMenus={setMenus} />}></Route>
+            <Route path='delete' element={<Menu_Delete menus={menus} setMenus={setMenus} />}></Route>
           </Route>
           <Route path='stock' element={<Stock />}>
             <Route path='list' element={<Stock_List />}></Route>
