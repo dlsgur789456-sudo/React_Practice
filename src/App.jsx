@@ -1,6 +1,6 @@
 import {Routes, Route} from 'react-router-dom';
 import {Login} from "./login/Login";
-
+import {Admin} from './admin/Admin';
 
 
 function App (){
