@@ -79,8 +79,8 @@ function App() {
           <Route path='menu' element={<Menu />}>
             <Route path='list' element={<Menu_List menus={menus} />}></Route>
             <Route path='add' element={<Menu_Add menus={menus} setMenus={setMenus} />}></Route>
-            <Route path='update' element={<Menu_Update />}></Route>
-            <Route path='delete' element={<Menu_Delete />}></Route>
+            <Route path='update' element={<Menu_Update menus={menus} setMenus={setMenus} />}></Route>
+            <Route path='delete' element={<Menu_Delete menus={menus} setMenus={setMenus} />}></Route>
           </Route>
           <Route path='stock' element={<Stock />}>
             <Route path='list' element={<Stock_List />}></Route>
