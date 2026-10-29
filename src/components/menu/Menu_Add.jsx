@@ -16,7 +16,7 @@ export const Menu_Add = ({ menus, setMenus }) => {
   }
 
   const handleAdd = () => {
-    
+
     if (!menu.id || !menu.name.trim() || !menu.price) {
       alert("모든 항목을 입력해주세요.");
       return;
@@ -27,7 +27,7 @@ export const Menu_Add = ({ menus, setMenus }) => {
     });
 
     if (idCheck) {
-      alert("이미 존재하는 메뉴 ID입니다.");
+      alert("이미 존재하는 메뉴 번호입니다.");
       return;
     }
 
@@ -48,7 +48,7 @@ export const Menu_Add = ({ menus, setMenus }) => {
     <div>
       <input
         type="number"
-        placeholder="메뉴 ID 입력"
+        placeholder="메뉴 번호를 입력하세요."
         name="id"
         value={menu.id}
         onChange={handleChange}
@@ -56,7 +56,7 @@ export const Menu_Add = ({ menus, setMenus }) => {
 
       <input
         type="text"
-        placeholder="메뉴 이름 입력"
+        placeholder="메뉴 이름을 입력하세요."
         name="name"
         value={menu.name}
         onChange={handleChange}
@@ -64,7 +64,7 @@ export const Menu_Add = ({ menus, setMenus }) => {
 
       <input
         type="number"
-        placeholder="메뉴 가격 입력"
+        placeholder="메뉴 가격을 입력하세요."
         name="price"
         value={menu.price}
         onChange={handleChange}

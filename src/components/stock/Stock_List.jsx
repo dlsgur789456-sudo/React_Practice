@@ -1,7 +1,18 @@
-
-export const Stock_List =()=> {
+export const Stock_List = ({ stocks }) => {
 
     return (
-        <div></div>
-    )
+        <div>
+            {
+                stocks.map((e, i) => {
+                    return (
+                        <div key={i}>
+                            <div>{e.id}</div>
+                            <div>{e.name}</div>
+                            <div>{e.stock}</div>
+                        </div>
+                    );
+                })
+            }
+        </div>
+    );
 }

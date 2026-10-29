@@ -5,7 +5,7 @@ export const Menu_Delete = ({ menus, setMenus }) => {
 
     const handleDelete = () => {
         if (!delSeq) {
-            alert("삭제할 메뉴 ID를 입력하세요.");
+            alert("삭제할 메뉴 번호를 입력하세요.");
             return;
         }
 
@@ -31,7 +31,7 @@ export const Menu_Delete = ({ menus, setMenus }) => {
             
             <input
                 type="text"
-                placeholder="삭제할 ID를 입력하세요"
+                placeholder="삭제할 메뉴번호를 입력하세요"
                 value={delSeq}
                 onChange={(e) => setDelSeq(e.target.value)}
             />
