@@ -1,20 +1,20 @@
 import { useNavigate, Outlet } from "react-router-dom"
 
-export const Admin =({setPage})=> {
+export const Admin =({page, setPage, pageMenu})=> {
     const navi = useNavigate();
+
+    const choosePage = (page) => {
+        navi("/admin/" + page);
+    }
     return (
-        <div className="conatiner">
+        <div className="container">
             <div className="adminHeader">
                 <p>매장 관리 시스템</p>
                 <button>로그아웃</button>
             </div>
-            <div>
+            <div className="body">
                 <div className="side">
-                    <div className="menu" onClick={()=>{navi("/admin/dashboard")}}>대시보드</div>
-                    <div className="menu" onClick={()=>{navi("/admin/menu")}}>메뉴관리</div>
-                    <div className="menu" onClick={()=>{navi("/admin/stock")}}>재고관리</div>
-                    <div className="menu" onClick={()=>{navi("/admin/order")}}>주문관리</div>
-                    <div className="menu" onClick={()=>{navi("/admin/member")}}>직원관리</div>
+                    {pageMenu.map((e,i)=> <div key={i} className="menu" name={e.value} onClick={() => choosePage(e.value)}>{e.name}</div>)}
                 </div>
                 <div className="main"><Outlet /></div>
             </div>

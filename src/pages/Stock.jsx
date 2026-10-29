@@ -1,19 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Outlet } from "react-router-dom"
+import { Crud_Bar } from "../components/Crud_Master";
 
-
-const Menu =()=> {
-
-    const navi = useNavigate();
-
-    return (
-        <div>
-            <div className="crud_bar">
-                <div className="crud_menu" onClick={()=>{navi("/admin/stock/list")}}>목록</div>
-                <div className="crud_menu" onClick={()=>{navi("/admin/stock/add")}}>추가</div>
-                <div className="crud_menu" onClick={()=>{navi("/admin/stock/update")}}>수정</div>
-                <div className="crud_menu" onClick={()=>{navi("/admin/stock/delete")}}>삭제</div>
-            </div>
-            <div><Outlet /></div>
-        </div>
-    )
-}
+export const Stock =()=> Crud_Bar('stock')
