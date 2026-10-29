@@ -1,5 +1,5 @@
 
-import { Menu_Add } from './components/Menu_Add';
+import { Menu_Add } from './components/menu/Menu_Add';
 import {Routes, Route} from 'react-router-dom';
 import {Login} from "./login/Login";
 import {Admin} from './admin/Admin';
