@@ -1,8 +1,28 @@
-
-import { Menu_Add } from './components/menu/Menu_Add';
-import {Routes, Route} from 'react-router-dom';
-import {Login} from "./login/Login";
-import {Admin} from './admin/Admin';
+import { Routes, Route } from 'react-router-dom';
+import { Login } from "./login/Login";
+import { Admin } from './admin/Admin';
+import { Menu } from '/.pages/Menu';
+import { Menu_Add } from './components/Menu_Add';
+import { Menu_List } from './components/Menu_List';
+import { Menu_Update } from './components/Menu_Update';
+import { Menu_Delete } from './components/Menu_Delete';
+import { Stock } from './pages/Stock';
+import { Stock_List } from './components/Stock_List'; 
+import { Stock_Add } from './components/Stock_Add';
+import { Stock_Update } from './components/Stock_Update';
+import { Stock_Delete } from './components/Stock_Delete';
+import { Order } from './pages/Order';
+import { Order_List } from './components/Order_List';
+import { Order_Add } from './components/Order_Add';
+import { Order_Update } from './components/Order_Update';
+import { Order_Delete } from './components/Order_Delete';
+import { Member } from './pages/Member';
+import { Member_List } from './components/Member_List';
+import { Member_Add } from './components/Member_Add'; 
+import { Member_Update } from './components/Member_Update';
+import { Member_Delete } from './components/Member_Delete';
+import { DashBoard } from './components/DashBoard';
+import { useState } from 'react';
 
 
 function App() {
@@ -42,7 +62,7 @@ function App() {
         <Route path='admin' element={<Admin />}>
           <Route path='dashboard' element={<DashBoard />}></Route>
           <Route path='menu' element={<Menu />}>
-            <Route path='list' element={<Menu_List menus={menus}/>}></Route>
+            <Route path='list' element={<Menu_List menus={menus} />}></Route>
             <Route path='add' element={<Menu_Add menus={menus} setMenus={setMenus} />}></Route>
             <Route path='update' element={<Menu_Update />}></Route>
             <Route path='delete' element={<Menu_Delete />}></Route>
