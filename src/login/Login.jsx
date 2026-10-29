@@ -4,7 +4,7 @@ export const Login =()=> {
     const navi = useNavigate();
     return (
         <div className="container">
-            <div>
+            <div className="login">
             <p>매장 관리 시스템 로그인</p>
             <input type="text" />
             <input type="text" />

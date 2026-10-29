@@ -1,0 +1,56 @@
+.container {
+    width: 1000px;
+    height: 800px;
+}
+
+.login {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.adminHeader {
+    width: 100%;
+    height: 50px;
+}
+
+.adminHeader> p {
+    text-align: left;
+}
+
+.adminHeader> button {
+    text-align: right;
+}
+
+.container> div {
+    width: 100%;
+    height: 100%;
+}
+
+.side {
+    width: 15%;
+    height: 100%;
+}
+
+.menu {
+    width: 100%;
+    height: 20%;
+}
+
+.main {
+    width: 85%;
+    height: 100%;
+}
+
+.main> div {
+    width: 100%;
+    height: 100%;
+}
+
+.crud_bar {
+    width: 100%;
+    height: 10%;
+}

@@ -4,7 +4,7 @@ export const Admin =({setPage})=> {
     const navi = useNavigate();
     return (
         <div className="conatiner">
-            <div className="header">
+            <div className="adminHeader">
                 <p>매장 관리 시스템</p>
                 <button>로그아웃</button>
             </div>
