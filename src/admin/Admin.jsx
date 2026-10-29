@@ -1,6 +1,6 @@
 import { useNavigate, Outlet } from "react-router-dom"
 
-export const Admin =()=> {
+export const Admin =({setPage})=> {
     const navi = useNavigate();
     return (
         <div className="conatiner">
