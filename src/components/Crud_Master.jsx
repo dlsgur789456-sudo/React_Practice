@@ -3,16 +3,19 @@ import { useNavigate, Outlet } from "react-router-dom"
 
 export const Crud_Bar =(page)=> {
     const navi = useNavigate();
+    const [menu, setMenu] = useState([
+        {page:'/list', name:'목록'}, {page:'/add', name:'추가'}, {page:'/update', name:'수정'}, {page:'/delete', name:'삭제'}
+    ])
     return (
         <div>
             <div className="crud_bar">
-                <div className="crud_menu" onClick={()=>{navi("/admin/" + page + "/list")}}>목록</div>
-                <div className="crud_menu" onClick={()=>{navi("/admin/" + page + "/add")}}>추가</div>
-                <div className="crud_menu" onClick={()=>{navi("/admin/" + page + "/update")}}>수정</div>
-                <div className="crud_menu" onClick={()=>{navi("/admin/" + page + "/delete")}}>삭제</div>
+                {menu.map((e,i)=> <div className="crud_menu" onClick={()=>{navi("/admin/" + page + e.page)}}>{e.name}</div>)}
             </div>
             <div><Outlet /></div>
         </div>
     )
 }
 
+export const Add =({list, setList}) => {
+    
+}

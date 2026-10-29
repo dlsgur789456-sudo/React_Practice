@@ -45,7 +45,7 @@ export const Menu_Add = ({ menus, setMenus }) => {
   };
 
   return (
-    <div>
+    <div className="main_body">
       <input
         type="number"
         placeholder="메뉴 번호를 입력하세요."

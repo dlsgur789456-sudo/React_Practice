@@ -70,21 +70,19 @@ function App() {
     { name: 'add', func: 'Add' }, { name: 'list', func: 'List' }, { name: 'update', func: 'Update' }, { name: 'delete', func: 'Delete' }
   ])
 
+  const [dashBoard, setDashBoard] = useState([
+    {name:'메뉴 개수', value:menus.length}, {name:'재고 품목 수', value:stocks.length}, {name:'직원 수', value:staffs.length}, {name:'주문 기록 수', value:orders.length}, 
+  ])
+
   return (
     <Routes>
 
       <Route>
         {/* 로그인 화면 (첫 화면) - 로그인 성공 시 관리자 화면으로 이동 */}
         <Route path='/' element={<Login />}></Route>
-
-        {/* 관리자 첫 화면 - 대시보드 (메뉴관리, 재고관리, 주문관리, 직원관리)로 이동 가능 */}
-        <Route path='admin' element={<Admin page={page} setPage={setPage} pageMenu={pageMenu} />}>
-
-          {/* 대시보드 */}
-          <Route index element={<DashBoard />} />
-          <Route path='dashboard' element={<DashBoard />}></Route>
-
-          {/* 메뉴관리 */}
+        <Route path='admin' element={<Admin page={page} setPage={setPage} pageMenu={pageMenu}/>}>
+          <Route index element={<DashBoard dashBoard={dashBoard}/>}></Route>
+          <Route path='dashboard' element={<DashBoard dashBoard={dashBoard}/>}></Route>
           <Route path='menu' element={<Menu />}>
             <Route index element={<Menu_List menus={menus} />}></Route>
             <Route path='list' element={<Menu_List menus={menus} />}></Route>
